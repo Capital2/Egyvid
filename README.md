@@ -1,2 +1,3 @@
 A scraper for Egybest and VidStream to extract movie download links directly.
-still under developpment.
+
+(code is broken; egybest changed the url pattern, under dev)
