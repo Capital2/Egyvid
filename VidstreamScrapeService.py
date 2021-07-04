@@ -58,7 +58,11 @@ def extractDownloadLink(url: str) -> str:
     uniqid = func[func.find("$["):]
     uniqid = uniqid[uniqid.find("data") + 8:uniqid.find("}") - 6]
     # js2py.translate_file("f.js", "preparePayload.py")
-    verif = js2py.eval_js(a0a + rota0a + a0b + op + payload + "payload()")
+
+    with open("func.js", 'w') as f:
+        f.write(a0a + rota0a + a0b + op + payload + "payload();")
+
+    verif = js2py.eval_js(a0a + rota0a + a0b + op + payload + "payload();")
     godallmighty = adurl + "?verify=" + verif
 
     # ---------------part2: the verify post request--------------
